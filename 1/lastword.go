@@ -15,7 +15,8 @@ func main() {
 	} else {
 		last1 := 0
 		last2 := 0
-		for i := len(a) - 1; i > 0; i-- {
+		res := ""
+		for i := len(a) - 1; i >= 0; i-- {
 			if last1 == 0 && a[i] != ' ' {
 				last1 = i + 1
 			} else if last1 != 0 && a[i] == ' ' {
@@ -24,10 +25,11 @@ func main() {
 			}
 
 		}
+		res = a[last2:last1]
 		fmt.Println(last1)
 		fmt.Println(last2)
 		// z01.PrintRune(10)
-		fmt.Println(a[last2:last1])
+		fmt.Println(res)
 	}
 
 }
